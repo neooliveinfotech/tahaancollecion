@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Product Details - TahaanCollection</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+ <style>
+  .contact-2 .contact-form-wrapper .form-group .input-with-icon .form-control{
+    
+     height: 3rem;
+  }
+   
+    .login .auth-btn {
+        padding: 8px 24px;
+    }
+ </style>
+</head>
+
+<body class="product-details-page">
+
+  <header id="header" class="header sticky-top">
+    
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.webp" alt=""> -->
+            <h1 class="sitename">TahaanCollection</h1>
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for products">
+              <button class="btn" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-person"></i>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>Welcome to <span class="sitename">TahaanCollection</span></h6>
+                  <p class="mb-0">Access account &amp; manage orders</p>
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>My Profile</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-bag-check me-2"></i>
+                    <span>My Orders</span>
+                  </a>
+                  <!-- <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-heart me-2"></i>
+                    <span>My Wishlist</span>
+                  </a> -->
+                  <!-- <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-gear me-2"></i>
+                    <span>Settings</span>
+                  </a> -->
+                </div>
+                <div class="dropdown-footer">
+                  <a href="login.html" class="btn btn-primary w-100 mb-2">Sign In</a>
+                  <a href="register.html" class="btn btn-outline-primary w-100">Register</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist -->
+            <!-- <a href="account.html" class="header-action-btn d-none d-md-block">
+              <i class="bi bi-heart"></i>
+              <span class="badge">0</span>
+            </a> -->
+
+            <!-- Cart -->
+            <a href="cart.html" class="header-action-btn">
+              <i class="bi bi-cart3"></i>
+              <span class="badge">3</span>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul style="justify-content: center;">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <!-- Products Mega Menu 2 -->
+            <li class="products-megamenu-2"><a href="#"><span>Suits</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+              <!-- Products Mega Menu 2 Mobile View -->
+              <ul class="mobile-megamenu">
+                <li class="dropdown"><a href="#"><span>Indian Suit</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <!-- <li><a href="#">Shirts &amp; Tops</a></li> -->
+                    <li><a href="#">Suit Name 1</a></li>
+                    <li><a href="#">Suit Name 2</a></li>
+                    <li><a href="#">Suit Name 3</a></li>
+                    <li><a href="#">Suit Name 4</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Pakistani Suit</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Suit Name 1</a></li>
+                    <li><a href="#">Suit Name 2</a></li>
+                    <li><a href="#">Suit Name 3</a></li>
+                    <li><a href="#">Suit Name 4</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <!-- End Products Mega Menu 2 Mobile View -->
+
+              <!-- Products Mega Menu 2 Desktop View -->
+              <div class="desktop-megamenu">
+
+                <!-- Tabs Content -->
+                <div class="megamenu-content tab-content">
+
+                  <!-- Women Tab -->
+                  <div class="tab-pane fade show active" id="womens-content-1883" role="tabpanel" aria-labelledby="womens-tab">
+                    <div class="category-layout">
+                      <div class="categories-section">
+                        <div class="category-headers">
+                          <h4>Indian Suit</h4>
+                          <h4>Pakistani Suit</h4>
+                        </div>
+
+                        <div class="category-links">
+                          <div class="link-row">
+                            <a href="#">Suit Name 1</a>
+                            <a href="#">Suit Name 1</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Suit Name 2</a>
+                            <a href="#">Suit Name 2</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Suit Name 3</a>
+                            <a href="#">Suit Name 3</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Suit Name 4</a>
+                            <a href="#">Suit Name 4</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- End Products Mega Menu 2 Desktop View -->
+
+            </li><!-- End Products Mega Menu 2 -->
+
+            <li><a href="contact.html">Contact Us</a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for products">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Contact Us</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Contact Us</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <section id="contact-2" class="contact-2 section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Contact Info Boxes -->
+        <div class="row gy-4 mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-info-box">
+              <div class="icon-box">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="info-content">
+                <h4>Our Address</h4>
+                <p>Govandi, Mumbai, Maharshtra</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-info-box">
+              <div class="icon-box">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h4>Email Address</h4>
+                <p><a href="mailto:neoolive@gmail.com">neoolive@gmail.com</a></p>
+                <!-- <p>contact@example.com</p> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="contact-info-box">
+              <div class="icon-box">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div class="info-content">
+                <h4>Call Us</h4>
+                <p><a href="tel:+910987654321">+91-0987654321</a></p>
+                <!-- <p>Saturday: 9 AM - 4 PM</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Google Maps (Full Width) -->
+      <div class="map-section" data-aos="fade-up" data-aos-delay="200">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- Contact Form Section (Overlapping) -->
+      <div class="container form-container-overlap">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-10">
+            <div class="contact-form-wrapper">
+              <h2 class="text-center mb-4">Get in Touch</h2>
+
+              <form action="forms/contact.php" method="post" class="php-email-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="input-with-icon">
+                        <i class="bi bi-person"></i>
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="input-with-icon">
+                        <i class="bi bi-telephone"></i>
+                        <input type="number" class="form-control" name="mobileno" placeholder="Mobile Number" required="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <div class="input-with-icon">
+                        <i class="bi bi-envelope"></i>
+                        <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-group">
+                      <div class="input-with-icon">
+                        <i class="bi bi-chat-dots message-icon"></i>
+                        <textarea class="form-control" name="message" placeholder="Write Message..." style="height: 114px" required=""></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary btn-submit">SEND MESSAGE</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Contact 2 Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">TahaanCollection</span>
+              </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.</p>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" style="justify-items:center">
+            <div class="footer-widget">
+              <h4>Quick Link</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4>Contact Information</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>Govandi, Mumbai</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span><a href="tel:+910987654321">+91 0987654321</a></span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span><a href="mailto:tahaan@gmail.com">tahaan@gmail.com</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="social-links footer-widget mt-0">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="sitename">TahaanCollection</strong>. All Rights Reserved.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              
+
+              <div class="legal-links">
+                <a href="tos.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tos.html">FAQs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

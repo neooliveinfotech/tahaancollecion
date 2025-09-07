@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Product Details - TahaanCollection</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+ <style>
+  .size-grid {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.size-chip {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.size-chip.active {
+  border-color: #000;
+  background-color: #f0f8ff;
+}
+
+.size-chip .selection-check {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 14px;
+  color: #000;
+  display: none;
+}
+
+.size-chip.active .selection-check {
+  display: block;
+}
+
+.selected-variant {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+  /* .main-showcase{
+    width: auto !important;
+    height: 300px !important;
+  } */
+  /* .product-details .product-gallery .main-showcase .image-navigation{
+    top:30% !important;
+  } */
+ </style>
+</head>
+
+<body class="product-details-page">
+
+  <header id="header" class="header sticky-top">
+    
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.webp" alt=""> -->
+            <h1 class="sitename">TahaanCollection</h1>
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for products">
+              <button class="btn" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-person"></i>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>Welcome to <span class="sitename">TahaanCollection</span></h6>
+                  <p class="mb-0">Access account &amp; manage orders</p>
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>My Profile</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-bag-check me-2"></i>
+                    <span>My Orders</span>
+                  </a>
+                  <!-- <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-heart me-2"></i>
+                    <span>My Wishlist</span>
+                  </a> -->
+                  <!-- <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-gear me-2"></i>
+                    <span>Settings</span>
+                  </a> -->
+                </div>
+                <div class="dropdown-footer">
+                  <a href="login.html" class="btn btn-primary w-100 mb-2">Sign In</a>
+                  <a href="register.html" class="btn btn-outline-primary w-100">Register</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist -->
+            <!-- <a href="account.html" class="header-action-btn d-none d-md-block">
+              <i class="bi bi-heart"></i>
+              <span class="badge">0</span>
+            </a> -->
+
+            <!-- Cart -->
+            <a href="cart.html" class="header-action-btn">
+              <i class="bi bi-cart3"></i>
+              <span class="badge">3</span>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul style="justify-content: center;">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <!-- Products Mega Menu 2 -->
+            <li class="products-megamenu-2"><a href="#"><span>Suits</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+              <!-- Products Mega Menu 2 Mobile View -->
+              <ul class="mobile-megamenu">
+                <li class="dropdown"><a href="#"><span>Indian Suit</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <!-- <li><a href="#">Shirts &amp; Tops</a></li> -->
+                    <li><a href="#">Suit Name 1</a></li>
+                    <li><a href="#">Suit Name 2</a></li>
+                    <li><a href="#">Suit Name 3</a></li>
+                    <li><a href="#">Suit Name 4</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Pakistani Suit</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Suit Name 1</a></li>
+                    <li><a href="#">Suit Name 2</a></li>
+                    <li><a href="#">Suit Name 3</a></li>
+                    <li><a href="#">Suit Name 4</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <!-- End Products Mega Menu 2 Mobile View -->
+
+              <!-- Products Mega Menu 2 Desktop View -->
+              <div class="desktop-megamenu">
+
+                <!-- Tabs Content -->
+                <div class="megamenu-content tab-content">
+
+                  <!-- Women Tab -->
+                  <div class="tab-pane fade show active" id="womens-content-1883" role="tabpanel" aria-labelledby="womens-tab">
+                    <div class="category-layout">
+                      <div class="categories-section">
+                        <div class="category-headers">
+                          <h4>Indian Suit</h4>
+                          <h4>Pakistani Suit</h4>
+                        </div>
+
+                        <div class="category-links">
+                          <div class="link-row">
+                            <a href="#">Suit Name 1</a>
+                            <a href="#">Suit Name 1</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Suit Name 2</a>
+                            <a href="#">Suit Name 2</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Suit Name 3</a>
+                            <a href="#">Suit Name 3</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Suit Name 4</a>
+                            <a href="#">Suit Name 4</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- End Products Mega Menu 2 Desktop View -->
+
+            </li><!-- End Products Mega Menu 2 -->
+
+            <li><a href="contact.html">Contact Us</a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for products">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Product Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Product Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Product Details Section -->
+    <section id="product-details" class="product-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-4">
+          <!-- Product Gallery -->
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="150">
+            <div class="product-gallery">
+              <div class="main-showcase">
+                <div class="image-zoom-container">
+                  <img src="assets/img/suit/ind1-removebg.png" alt="Product Main" class=" main-product-image drift-zoom" id="main-product-image" data-zoom="assets/img/suit/ind1-removebg.png">
+
+                  <div class="image-navigation">
+                    <button class="nav-arrow prev-image image-nav-btn prev-image" type="button">
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="nav-arrow next-image image-nav-btn next-image" type="button">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="thumbnail-grid">
+                <div class="thumbnail-wrapper thumbnail-item active" data-image="assets/img/suit/ind1-removebg.png">
+                  <img src="assets/img/suit/ind1-removebg.png" alt="View 1" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="assets/img/suit/ind2.jpg">
+                  <img src="assets/img/suit/ind2.jpg" alt="View 2" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="assets/img/suit/ind3.jpg">
+                  <img src="assets/img/suit/ind3.jpg" alt="View 3" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="assets/img/suit/ind4.jpg">
+                  <img src="assets/img/suit/ind4.jpg" alt="View 4" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="assets/img/suit/ind5.jpg">
+                  <img src="assets/img/suit/ind5.jpg" alt="View 5" class="img-fluid">
+                </div>
+                <div class="thumbnail-wrapper thumbnail-item" data-image="assets/img/suit/ind6.jpg">
+                  <img src="assets/img/suit/ind6.jpg" alt="View 6" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="product-details">
+              <div class="product-badge-container">
+                <span class="badge-category">(127 reviews)</span>
+              </div>
+
+              <h1 class="product-name mb-1">Suite Name</h1>
+
+              <div class="pricing-section">
+                <div class="price-display">
+                  <span class="sale-price">₹199</span>
+                  <!-- <span class="regular-price">₹239.99</span> -->
+                </div>
+                
+              </div>
+
+              <div class="product-description">
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              </div>
+
+              <div class="availability-status">
+                <div class="stock-indicator">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span class="stock-text">In Stock</span>
+                </div>
+                <div class="quantity-left">Only 18 items remaining</div>
+              </div>
+
+              <!-- Product Variants -->
+              <div class="variant-section">
+                <div class="color-selection">
+                  <label class="variant-label">Available Colors:</label>
+                  <div class="color-grid">
+                    <div class="color-chip active" data-color="Midnight Black" style="background: linear-gradient(135deg, #1a1a1a, #000);">
+                      <span class="selection-check"><i class="bi bi-check"></i></span>
+                    </div>
+                    <div class="color-chip" data-color="Pearl White" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                      <span class="selection-check"><i class="bi bi-check"></i></span>
+                    </div>
+                    <div class="color-chip" data-color="Ocean Blue" style="background: linear-gradient(135deg, #0066cc, #004499);">
+                      <span class="selection-check"><i class="bi bi-check"></i></span>
+                    </div>
+                    <div class="color-chip" data-color="Forest Green" style="background: linear-gradient(135deg, #28a745, #155724);">
+                      <span class="selection-check"><i class="bi bi-check"></i></span>
+                    </div>
+                  </div>
+                  <div class="selected-variant">Selected: <span>Midnight Black</span></div>
+                </div>
+              </div>
+              <div class="variant-section">
+                <div class="size-selection">
+  <label class="variant-label">Select Size:</label>
+  <div class="size-grid">
+    <div class="size-chip active" data-size="S">
+      <span>S</span>
+      <span class="selection-check"><i class="bi bi-check"></i></span>
+    </div>
+    <div class="size-chip" data-size="M">
+      <span>M</span>
+      <span class="selection-check"><i class="bi bi-check"></i></span>
+    </div>
+    <div class="size-chip" data-size="L">
+      <span>L</span>
+      <span class="selection-check"><i class="bi bi-check"></i></span>
+    </div>
+    <div class="size-chip" data-size="XL">
+      <span>XL</span>
+      <span class="selection-check"><i class="bi bi-check"></i></span>
+    </div>
+  </div>
+  <div class="selected-variant">Selected Size: <span id="selectedSize">S</span></div>
+</div>
+
+              </div>
+
+              <!-- Purchase Options -->
+              <div class="purchase-section">
+                
+
+                <div class="action-buttons">
+                  <button class="btn primary-action">
+                    <i class="bi bi-bag-plus"></i>
+                    Add to Cart
+                  </button>
+                  <!-- <button class="btn secondary-action">
+                    <i class="bi bi-lightning"></i>
+                    Buy Now
+                  </button> -->
+                  <!-- <button class="btn icon-action" title="Add to Wishlist">
+                    <i class="bi bi-heart"></i>
+                  </button> -->
+                </div>
+              </div>
+
+              <!-- Benefits List -->
+              <div class="benefits-list">
+                <div class="benefit-item">
+                  <i class="bi bi-truck"></i>
+                  <span>Free delivery on orders over ₹499</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="bi bi-arrow-clockwise"></i>
+                  <span>7-day free returns</span>
+                </div>
+                <!-- <div class="benefit-item">
+                  <i class="bi bi-shield-check"></i>
+                  <span>3-year manufacturer warranty</span>
+                </div> -->
+                <div class="benefit-item">
+                  <i class="bi bi-headset"></i>
+                  <span>24/7 customer support available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Information Tabs -->
+        <div class="row mt-5" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-12">
+            <div class="info-tabs-container">
+              <nav class="tabs-navigation nav">
+                <!-- <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#ecommerce-product-details-5-overview" type="button">Overview</button> -->
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#ecommerce-product-details-5-technical" type="button">Product Details</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ecommerce-product-details-5-customer-reviews" type="button">Reviews (127)</button>
+              </nav>
+
+              <div class="tab-content">
+               
+                <!-- Technical Details Tab -->
+                <div class="tab-pane fade show active" id="ecommerce-product-details-5-technical">
+                  <div class="technical-content">
+                    <div class="row g-4">
+                      <div class="col-md-6">
+                        <div class="tech-group">
+                          <h4>Specifications</h4>
+                          <div class="spec-table">
+                            <div class="spec-row">
+                              <span class="spec-name">Fabric</span>
+                              <span class="spec-value">Muslin</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">Neckline</span>
+                              <span class="spec-value">V Neck</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">Sleeve</span>
+                              <span class="spec-value">Elbow</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">Pattern</span>
+                              <span class="spec-value">Pattern</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">Color</span>
+                              <span class="spec-value">Orange</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="tech-group">
+                          <h4>Description</h4>
+                          <div class="spec-table">
+                            <div class="spec-row">
+                              <span class="spec-name">CARE</span>
+                              <span class="spec-value">Dry Clean Only</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">Model Size</span>
+                              <span class="spec-value">Model is wearing S Size</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">Model Height</span>
+                              <span class="spec-value">5'5"</span>
+                            </div>
+                            <!-- <div class="spec-row">
+                              <span class="spec-name">Usage Time</span>
+                              <span class="spec-value">35+ hours</span>
+                            </div>
+                            <div class="spec-row">
+                              <span class="spec-name">Charge Time</span>
+                              <span class="spec-value">2.5 hours</span>
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div class="tab-pane fade" id="ecommerce-product-details-5-customer-reviews">
+                  <div class="reviews-content">
+                    <div class="reviews-header">
+                      <div class="rating-overview">
+                        <div class="average-score">
+                          <div class="score-display">4.6</div>
+                          <div class="score-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                          </div>
+                          <div class="total-reviews">127 customer reviews</div>
+                        </div>
+
+                        <div class="rating-distribution">
+                          <div class="rating-row">
+                            <span class="stars-label">5★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 68%;"></div>
+                            </div>
+                            <span class="count-label">86</span>
+                          </div>
+                          <div class="rating-row">
+                            <span class="stars-label">4★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 22%;"></div>
+                            </div>
+                            <span class="count-label">28</span>
+                          </div>
+                          <div class="rating-row">
+                            <span class="stars-label">3★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 6%;"></div>
+                            </div>
+                            <span class="count-label">8</span>
+                          </div>
+                          <div class="rating-row">
+                            <span class="stars-label">2★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 3%;"></div>
+                            </div>
+                            <span class="count-label">4</span>
+                          </div>
+                          <div class="rating-row">
+                            <span class="stars-label">1★</span>
+                            <div class="progress-container">
+                              <div class="progress-fill" style="width: 1%;"></div>
+                            </div>
+                            <span class="count-label">1</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="write-review-cta">
+                        <h4>Share Your Experience</h4>
+                        <p>Help others make informed decisions</p>
+                        <button class="btn review-btn">Write Review</button>
+                      </div>
+                    </div>
+
+                    <div class="customer-reviews-list">
+                      <div class="review-card">
+                        <div class="reviewer-profile">
+                          <img src="assets/img/person/person-f-3.webp" alt="Customer" class="profile-pic">
+                          <div class="profile-details">
+                            <div class="customer-name">Sarah Martinez</div>
+                            <div class="review-meta">
+                              <div class="review-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                              </div>
+                              <span class="review-date">March 28, 2024</span>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 class="review-headline">Outstanding audio quality and comfort</h5>
+                        <div class="review-text">
+                          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        </div>
+                        
+                      </div>
+
+                      <div class="review-card">
+                        <div class="reviewer-profile">
+                          <img src="assets/img/person/person-m-5.webp" alt="Customer" class="profile-pic">
+                          <div class="profile-details">
+                            <div class="customer-name">David Chen</div>
+                            <div class="review-meta">
+                              <div class="review-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                              </div>
+                              <span class="review-date">March 15, 2024</span>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 class="review-headline">Great value, minor connectivity issues</h5>
+                        <div class="review-text">
+                          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Overall satisfied with the purchase.</p>
+                        </div>
+                       
+                      </div>
+
+                      <div class="review-card">
+                        <div class="reviewer-profile">
+                          <img src="assets/img/person/person-f-7.webp" alt="Customer" class="profile-pic">
+                          <div class="profile-details">
+                            <div class="customer-name">Emily Rodriguez</div>
+                            <div class="review-meta">
+                              <div class="review-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                              </div>
+                              <span class="review-date">February 22, 2024</span>
+                            </div>
+                          </div>
+                        </div>
+                        <h5 class="review-headline">Perfect for work-from-home setup</h5>
+                        <div class="review-text">
+                          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                        </div>
+                        
+                      </div>
+
+                      <div class="load-more-section">
+                        <button class="btn load-more-reviews">Show More Reviews</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section id="best-sellers" class="best-sellers section pt-0">
+
+          <!-- Section Title -->
+          <div class="container section-title pb-3" data-aos="fade-up">
+            <h2>Related Product</h2>
+            <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+          </div>
+          <!-- End Section Title -->
+
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="account">
+              <div class="wishlist-grid">
+                <!-- Product Item 1 -->
+                <div class="wishlist-card" data-aos="fade-up" data-aos-delay="100">
+                  <div class="wishlist-image">
+                    <a href="product-details.html"><img src="assets/img/suit/ind1.jpg" alt="Product" loading="lazy"></a>
+                    <div class="sale-badge">In Stock</div>
+                  </div>
+                  <div class="wishlist-content">
+                    <a href="product-details.html"><p class="prd-details">Lorem ipsum dolor sit amet map lorem best part</p></a>
+                    <div class="product-meta">
+                      <div class="price">
+                        <span class="current">₹179</span>
+                        <!-- <span class="original">₹99.99</span> -->
+                      </div>
+                    </div>
+                    <button type="button" class="btn-add-cart">Add to Cart</button>
+                  </div>
+                </div>
+
+                <!-- Product Item 2 -->
+                <div class="wishlist-card" data-aos="fade-up" data-aos-delay="100">
+                  <div class="wishlist-image">
+                    <a href="product-details.html"><img src="assets/img/suit/pak6.jpg" alt="Product" loading="lazy"></a>
+                    <div class="sale-badge">In Stock</div>
+                  </div>
+                  <div class="wishlist-content">
+                    <a href="product-details.html"><p class="prd-details">Lorem ipsum dolor sit amet map lorem best part</p></a>
+                    <div class="product-meta">
+                      <div class="price">
+                        <span class="current">₹179</span>
+                        <!-- <span class="original">₹99.99</span> -->
+                      </div>
+                    </div>
+                    <button type="button" class="btn-add-cart">Add to Cart</button>
+                  </div>
+                </div>
+
+                <!-- Product Item 3 -->
+                <div class="wishlist-card" data-aos="fade-up" data-aos-delay="100">
+                  <div class="wishlist-image">
+                    <a href="product-details.html"><img src="assets/img/suit/ind4.jpg" alt="Product" loading="lazy"></a>
+                    <div class="sale-badge">In Stock</div>
+                  </div>
+                  <div class="wishlist-content">
+                    <a href="product-details.html"><p class="prd-details">Lorem ipsum dolor sit amet map lorem best part</p></a>
+                    <div class="product-meta">
+                      <div class="price">
+                        <span class="current">₹179</span>
+                        <!-- <span class="original">₹99.99</span> -->
+                      </div>
+                    </div>
+                    <button type="button" class="btn-add-cart">Add to Cart</button>
+                  </div>
+                </div>
+
+                <!-- Product Item 4 -->
+                <div class="wishlist-card" data-aos="fade-up" data-aos-delay="300">
+                  <div class="wishlist-image">
+                    <img src="assets/img/suit/pak2.jpg" alt="Product" loading="lazy">
+                    <div class="out-of-stock-badge">Out of Stock</div>
+                  </div>
+                  <div class="wishlist-content">
+                    <p class="prd-details">Lorem ipsum dolor sit amet</p>
+                    <div class="product-meta">
+                      <div class="price">
+                        <span class="current">₹199</span>
+                      </div>
+                    </div>
+                    <button type="button" class="btn-notify">Notify When Available</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Product 1 -->
+              
+              <!-- End Product 4 -->
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+    </section><!-- /Product Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">TahaanCollection</span>
+              </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.</p>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6" style="justify-items:center">
+            <div class="footer-widget">
+              <h4>Quick Link</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-widget">
+              <h4>Contact Information</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>Govandi, Mumbai</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span><a href="tel:+910987654321">+91 0987654321</a></span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span><a href="mailto:tahaan@gmail.com">tahaan@gmail.com</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="social-links footer-widget mt-0">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="sitename">TahaanCollection</strong>. All Rights Reserved.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              
+
+              <div class="legal-links">
+                <a href="tos.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tos.html">FAQs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+  const sizeChips = document.querySelectorAll(".size-chip");
+  const selectedSizeText = document.getElementById("selectedSize");
+
+  sizeChips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      document.querySelector(".size-chip.active").classList.remove("active");
+      chip.classList.add("active");
+      selectedSizeText.textContent = chip.getAttribute("data-size");
+    });
+  });
+</script>
+
+
+</body>
+
+</html>
