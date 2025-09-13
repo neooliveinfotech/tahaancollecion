@@ -86,6 +86,24 @@
   .hero-visuals {
     margin-top: 2rem;
   }
+  .header-nav{
+    z-index: 1000 !important;
+  }
+}
+.header-nav {
+  position: fixed; /* Keep the header in place */
+  /* top: 100px; */
+  width: 100%;
+  z-index: -1;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hiding/showing */
+}
+
+.header-nav.scroll-down {
+  transform: translateY(-100%);
+}
+
+.header-nav.scroll-up {
+  transform: translateY(0);
 }
 
 </style>
@@ -98,7 +116,7 @@
     <!-- Main Header -->
     <div class="main-header">
       <div class="container-fluid container-xl">
-        <div class="d-flex py-3 align-items-center justify-content-between">
+        <div class="d-flex py-2 align-items-center justify-content-between">
 
           <!-- Logo -->
           <a href="index.html" class="logo d-flex align-items-center">
